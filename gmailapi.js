@@ -112,11 +112,13 @@ function updateSigninStatus(isSignedIn) {
         'Bearer ' + oauthToken);
         xhr1.send();
         xhr1.onload=function(){
-        let mailInfo=JSON.parse(this.response);
-        var from=getHeader(mailInfo.payload.headers,"From");
-        var subject=getHeader(mailInfo.payload.headers,"Subject");
-        var date=getHeader(mailInfo.payload.headers,"Date");
-        appendMailRow(from,subject,date);
+            let mailInfo=JSON.parse(this.response);
+console.log( mailInfo );
+console.warn( mailInfo );
+            var from=getHeader(mailInfo.payload.headers,"From");
+            var subject=getHeader(mailInfo.payload.headers,"Subject");
+            var date=getHeader(mailInfo.payload.headers,"Date");
+            appendMailRow(from,subject,date);
     }
     }
 
