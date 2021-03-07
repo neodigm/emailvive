@@ -1,25 +1,15 @@
-var CLIENT_ID = '920861587885-rb7tv3emgevlpqb6g4va0ncp1fh77ikd.apps.googleusercontent.com';
-var API_KEY = 'AIzaSyBLj4fLJ_Z2rV-BxJieR2e-S5eKnlVqKSc';
+var CLIENT_ID = "moc.tnetnocresuelgoog.sppa.dki77hf1pcn0av4g6bqplvegme3vt7br-588785168029";
+var API_KEY = "cSKqVlnKe5S-e2ReiJxB-Vr2Z_JLf4jLBySazIA";
 var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/gmail/v1/rest"];
 var SCOPES = 'https://www.googleapis.com/auth/gmail.readonly';
+
+let doRevr = ( sIn = "tacocat" ) => ( sIn.split("").reverse().join("") );
+
+CLIENT_ID = doRevr( CLIENT_ID );
+API_KEY = doRevr( API_KEY );
+
 /*
 
-Client ID
-920861587885-rb7tv3emgevlpqb6g4va0ncp1fh77ikd.apps.googleusercontent.com
-Client Secret
-eITK0uD4CK3udQ-BB62GjeB9
-API Key
-AIzaSyBLj4fLJ_Z2rV-BxJieR2e-S5eKnlVqKSc
-
-
-
-{"web":{"client_id":"130878651121-5nopa9n8aar19pkel0qo3eg3dkv7veag.apps.googleusercontent.com",
-    "project_id":"brave-framework-306118",
-    "auth_uri":"https://accounts.google.com/o/oauth2/auth",
-    "token_uri":"https://oauth2.googleapis.com/token",
-    "auth_provider_x509_cert_url":"https://www.googleapis.com/oauth2/v1/certs",
-    "client_secret":"TuzrIwgzucu1JxTM5kTdKSWg",
-    "javascript_origins":["https://www.emailreplytime.com"]}}
 */
 var loginPage = document.getElementById('login');
 var gmailPage = document.getElementById('gmail');
