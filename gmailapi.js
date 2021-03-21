@@ -14,11 +14,11 @@ API_KEY = doRevr( API_KEY );
 var loginPage = document.getElementById('login');
 var gmailPage = document.getElementById('gmail');
 
-var authorizeButton = document.getElementById('loginBtn');
-var signoutButton = document.getElementById('logoutBtn');
+var eBtnSignIn = document.getElementById('loginBtn');
+var eBtnSignOut = document.getElementById('logoutBtn');
 
-authorizeButton.onclick = handleAuthClick;
-signoutButton.onclick = handleSignoutClick;
+eBtnSignIn.onclick = handleAuthClick;
+eBtnSignOut.onclick = handleSignoutClick;
 
 
 function handleClientLoad() {
@@ -62,34 +62,31 @@ function updateSigninStatus(isSignedIn) {
   function handleSignoutClick(event) {
     gapi.auth2.getAuthInstance().signOut();
   }
-
+/*
   function loadGmailApi() {
     gapi.client.load('gmail', 'v1', displayInbox);
-  }
+  } */
   /*******************END AUTHENTICATION*****************/
   
 
     function getGmailData(){
-    var user = gapi.auth2.getAuthInstance().currentUser.get();
-    var oauthToken = user.getAuthResponse().access_token;
-    console.log(oauthToken);
-    var xhr = new XMLHttpRequest();
-    var userId='me';
-    xhr.open('GET',
-        'https://gmail.googleapis.com/gmail/v1/users/'+userId+'/messages');
-    xhr.setRequestHeader('Authorization',
-        'Bearer ' + oauthToken);
-    xhr.send();
-    xhr.onload=function () {
-        var data=JSON.parse(this.response);
-        for (let i in data.messages)
-        {
-           getMailInfo(data.messages[i].id,userId,oauthToken);
-
-        }
-
-    }
-
+      var user = gapi.auth2.getAuthInstance().currentUser.get();
+      var oauthToken = user.getAuthResponse().access_token;
+      console.log(oauthToken);
+      var xhr = new XMLHttpRequest();
+      var userId='me';
+      xhr.open('GET',
+          'https://gmail.googleapis.com/gmail/v1/users/'+userId+'/messages');
+      xhr.setRequestHeader('Authorization',
+          'Bearer ' + oauthToken);
+      xhr.send();
+      xhr.onload=function () {
+          var data=JSON.parse(this.response);
+          for (let i in data.messages)
+          {
+            getMailInfo(data.messages[i].id,userId,oauthToken);
+          }
+      }
     }
 
 
