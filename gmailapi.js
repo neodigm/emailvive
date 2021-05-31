@@ -1,5 +1,5 @@
-var CLIENT_ID = "moc.tnetnocresuelgoog.sppa.dki77hf1pcn0av4g6bqplvegme3vt7br-588785168029";
-var API_KEY = "cSKqVlnKe5S-e2ReiJxB-Vr2Z_JLf4jLBySazIA";
+var CLIENT_ID = "moc.tnetnocresuelgoog.sppa.2n5jn3qn53b76h5sqc92ae7v02qjpep3-277572845182";
+var API_KEY = "wySB8UJSJTTR2d_k_uN_KWLdDtsYZutUDySazIA";
 var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/gmail/v1/rest"];
 var SCOPES = 'https://www.googleapis.com/auth/gmail.readonly';
 
